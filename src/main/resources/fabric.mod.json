@@ -1,38 +1,10 @@
 {
-	"schemaVersion": 1,
-	"id": "soundping",
-	"version": "${version}",
-	"name": "Soundping",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/soundping/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.example.soundping.Soundping"
-		],
-		"client": [
-			"com.example.soundping.client.SoundpingClient"
-		]
-	},
-	"mixins": [
-		"soundping.mixins.json",
-		{
-			"config": "soundping.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.20.1",
-		"minecraft": "~26.3",
-		"java": ">=25",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "soundping",
+  "version": "1.0.0",
+  "name": "Sound Ping",
+  "environment": "client",
+  "entrypoints": { "client": ["com.example.soundping.SoundPingMod"] },
+  "mixins": [{ "config": "soundping.mixins.json", "environment": "client" }],
+  "depends": { "fabricloader": ">=0.17", "fabric-api": "*", "minecraft": "~26.3", "java": ">=25" }
 }
