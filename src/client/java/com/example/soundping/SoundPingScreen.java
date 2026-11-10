@@ -47,19 +47,19 @@ public class SoundPingScreen extends Screen {
             btn.setMessage(Component.literal("Range: " + Config.radius + " chunks"));
         }).bounds(left + half + gap, y, half, 20).build();
         addRenderableWidget(range);
-        y += 28;
+        y += 26;
 
         // one toggle per block group
         BlockKind[] kinds = BlockKind.values();
         for (int i = 0; i < kinds.length; i++) {
             BlockKind k = kinds[i];
             int cx = left + (i % cols) * (bw + gap);
-            int cy = y + (i / cols) * 24;
+            int cy = y + (i / cols) * 22;
             addToggle(cx, cy, bw, k.label, () -> Config.isOn(k), () -> Config.toggle(k));
         }
 
         int rows = (kinds.length + cols - 1) / cols;
         addRenderableWidget(Button.builder(Component.literal("Done"), btn -> onClose())
-                .bounds(left, y + rows * 24 + 4, full, 20).build());
+                .bounds(left, y + rows * 22 + 4, full, 20).build());
     }
 }

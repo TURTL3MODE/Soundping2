@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.LevelChunkSection;
 import net.minecraft.world.phys.AABB;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +36,10 @@ public class SoundPingMod implements ClientModInitializer {
         KeyMapping.Category category = KeyMapping.Category.register(
                 Identifier.fromNamespaceAndPath("soundping", "main"));
         menuKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
-                "key.soundping.menu", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_RIGHT_SHIFT, category));
+                "key.soundping.menu", InputConstants.Type.KEYBOARD, InputConstants.KEY_K, category));
 
         ClientTickEvents.END_CLIENT_TICK.register(mc -> {
-            while (menuKey.consumeClick()) mc.setScreen(new SoundPingScreen());
+            while (menuKey.consumeClick()) mc.gui.setScreen(new SoundPingScreen());
             if (++tickCounter % 20 == 0) scan(mc);
         });
 

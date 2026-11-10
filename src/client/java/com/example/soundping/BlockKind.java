@@ -28,6 +28,9 @@ public enum BlockKind {
     PISTON(     "Pistons",      0x60C0FF, true,  false, s -> s.is(Blocks.PISTON) || s.is(Blocks.STICKY_PISTON)),
     OBSERVER(   "Observers",    0x40FF80, true,  false, s -> s.is(Blocks.OBSERVER)),
     BEACON(     "Beacons",      0x40FFFF, true,  false, s -> s.is(Blocks.BEACON)),
+    EMERALD(    "Emerald",  0x20E040, true,  false, s -> s.is(Blocks.EMERALD_ORE) || s.is(Blocks.DEEPSLATE_EMERALD_ORE)),
+    DIAMOND(    "Diamond",  0x40E0FF, false, false, s -> s.is(Blocks.DIAMOND_ORE) || s.is(Blocks.DEEPSLATE_DIAMOND_ORE)),
+    DEBRIS(     "Debris", 0x8B5A2B, false, false, s -> s.is(Blocks.ANCIENT_DEBRIS)),
     GILDED(     "Gilded BS",    0xFFD700, true,  false, s -> s.is(Blocks.GILDED_BLACKSTONE)),
     BLACKSTONE( "Blackstone",   0x8080B0, false, true,  s -> s.is(Blocks.BLACKSTONE));
 
